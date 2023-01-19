@@ -20,11 +20,12 @@ class SimpleGantt:
 
 	def add_work_info(self,data):
 		'''
-		!!!!! Working now !!!!!!!! 
-		
-		Add the task data to tasks_data.
+		Add the task data to tasks_data["id"].
 		:rtype: int
 		'''
+
+
+
 		return 0
 
 
@@ -42,40 +43,57 @@ def data_path():
 	'''
 	return os.path.join(base_dir(), "csv", "tasks.csv")
 
-def assemble_csv_strs(csv_db,line):
+def assemble_csv_list(csv_db,line):
 	'''
-	Assembles each list data to make csv dict data .
+	Assembles to make csv dict database and add to csv_db which is the class object
+	for csv database.
 	:rtype: list
 	'''
 	data = []
 	#print(line["Id"])
+	print (line["Id"])
+	print("\n")
+
+	# Add the id number to csv_db class object
+	csv_db.add_id(int(line["Id"]))
+
+	#print(line)
+	"""
 	for key in line:
 		# If the key is id, you can add the id number to csv_db class object.
 		if key == "Id" :
 			print(line[key])
 			csv_db.add_id(int(line[key]))
+		else :
+			#csv_db.add_work_info()
+			print("\n")
+			print(key)
+			print(line[key])
+			print(line)
 
 		#print(key)
 		#print(line[key])
 		#print(type(line[key]))
 		#print("\n")
-
+	"""
 	return 0
 
-def read_cvs_file():
+def read_csv_file():
 	'''
 	Read the csv file.
 	:rtype: list
 	'''
+	csv_list = []
 	csv_db = SimpleGantt()
 	with open(data_path(), "r") as fp:
 		#reader = csv.reader(fp)
 		reader = csv.DictReader(fp)
-		print(reader)
+		
 		for line in reader:
-			assemble_csv_strs(csv_db,line)
-			#print(line)
-			#print("\n\n")
+			
+			csv_list.append(line)
+	assemble_csv_list(csv_db,csv_list)
+		
 	return 0
 
 def main():
@@ -83,7 +101,7 @@ def main():
 	Main function 
 	:rtype: int
 	'''
-	read_cvs_file()
+	read_csv_file()
 	return 0
 
 if __name__ == "__main__":
