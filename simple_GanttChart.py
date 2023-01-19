@@ -9,22 +9,27 @@ class SimpleGantt:
 	def __init__(self):
 			self.tasks_data = {}
 
-	def add_id(self,id):
+	def add_id(self,task_id):
 		''' 
-		Add new dict with the key is id to tasks_data
+		Add new dict with the key is task_id to tasks_data
 		:rtype: int
 		'''
 		in_data = {}
-		self.tasks_data[int(id)]=in_data
+		self.tasks_data[int(task_id)]=in_data
 		return 0
 
-	def add_work_info(self,data):
+	def add_work_info(self,task_id,data):
 		'''
-		Add the task data to tasks_data["id"].
+		Add the task data to tasks_data["task_id"].
 		:rtype: int
 		'''
-
-
+		#print("Befor is",self.tasks_data[task_id])
+		#print("\n")
+		 
+		self.tasks_data[task_id] = data
+		hoge = self.tasks_data[task_id].get
+		
+		print("After is",self.tasks_data[task_id])
 
 		return 0
 
@@ -50,32 +55,16 @@ def assemble_csv_list(csv_db,line):
 	:rtype: list
 	'''
 	data = []
-	#print(line["Id"])
-	print (line["Id"])
-	print("\n")
 
 	# Add the id number to csv_db class object
-	csv_db.add_id(int(line["Id"]))
-
-	#print(line)
-	"""
-	for key in line:
-		# If the key is id, you can add the id number to csv_db class object.
-		if key == "Id" :
-			print(line[key])
-			csv_db.add_id(int(line[key]))
-		else :
-			#csv_db.add_work_info()
-			print("\n")
-			print(key)
-			print(line[key])
-			print(line)
-
-		#print(key)
-		#print(line[key])
-		#print(type(line[key]))
-		#print("\n")
-	"""
+	for item in line:
+			#print(item["Id"])
+			#print("\n")
+			#task_id = int(item.pop("Id"))
+			task_id = int(item["Id"])
+			csv_db.add_id(task_id)
+			csv_db.add_work_info(task_id,item)
+	
 	return 0
 
 def read_csv_file():
@@ -90,8 +79,12 @@ def read_csv_file():
 		reader = csv.DictReader(fp)
 		
 		for line in reader:
-			
 			csv_list.append(line)
+
+			# If there is empty key in line, you delete it. 
+			if('' in line.keys()):
+				hoge = line.pop("")
+
 	assemble_csv_list(csv_db,csv_list)
 		
 	return 0
