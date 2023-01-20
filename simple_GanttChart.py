@@ -7,31 +7,42 @@ class SimpleGantt:
 	"""Base Simple Gantt Chart class.
 	"""
 	def __init__(self):
-			self.tasks_data = {}
+			self.task_data = {}
 
 	def add_id(self,task_id):
 		''' 
-		Add new dict with the key is task_id to tasks_data
+		Add new dict with the key is task_id to task_data
 		:rtype: int
 		'''
 		in_data = {}
-		self.tasks_data[int(task_id)]=in_data
+		self.task_data[int(task_id)]=in_data
 		return 0
 
 	def add_work_info(self,task_id,data):
 		'''
-		Add the task data to tasks_data["task_id"].
+		Add the task data to task_data["task_id"].
 		:rtype: int
 		'''
-		#print("Befor is",self.tasks_data[task_id])
+		#print("Befor is",self.task_data[task_id])
 		#print("\n")
 		 
-		self.tasks_data[task_id] = data
-		hoge = self.tasks_data[task_id].get
+		self.task_data[task_id] = data
+		hoge = self.task_data[task_id].get
 		
-		print("After is",self.tasks_data[task_id])
+		print("After is",self.task_data[task_id])
 
 		return 0
+
+	def get_all_ids(self):
+		'''
+		Return the list which has all ids of tasks database.
+		:rtype: list
+		'''
+		all_keys = []
+		for key in self.task_data:
+			all_keys.append(int(key))
+
+		return all_keys
 
 
 def base_dir():
@@ -64,6 +75,7 @@ def assemble_csv_list(csv_db,line):
 			task_id = int(item["Id"])
 			csv_db.add_id(task_id)
 			csv_db.add_work_info(task_id,item)
+	#print(csv_db[""])
 	
 	return 0
 
@@ -86,6 +98,7 @@ def read_csv_file():
 				hoge = line.pop("")
 
 	assemble_csv_list(csv_db,csv_list)
+	#print ("All task ids are", csv_db.get_all_ids(),"\n")
 		
 	return 0
 
