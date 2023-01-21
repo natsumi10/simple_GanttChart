@@ -3,6 +3,8 @@ import os
 import sys
 import csv
 
+from create_html import create_html
+
 class SimpleGantt:
 	"""Base Simple Gantt Chart class.
 	"""
@@ -69,13 +71,9 @@ def assemble_csv_list(csv_db,line):
 
 	# Add the id number to csv_db class object
 	for item in line:
-			#print(item["Id"])
-			#print("\n")
-			#task_id = int(item.pop("Id"))
 			task_id = int(item["Id"])
 			csv_db.add_id(task_id)
 			csv_db.add_work_info(task_id,item)
-	#print(csv_db[""])
 	
 	return 0
 
@@ -87,13 +85,14 @@ def read_csv_file():
 	csv_list = []
 	csv_db = SimpleGantt()
 	with open(data_path(), "r") as fp:
-		#reader = csv.reader(fp)
-		reader = csv.DictReader(fp)
+		#csv_reader = csv.reader(fp)
+		csv_reader = csv.DictReader(fp)
 		
-		for line in reader:
+		# Collect all csv data into a list.(The name is "csv_list")
+		for line in csv_reader:
 			csv_list.append(line)
 
-			# If there is empty key in line, you delete it. 
+			# If there is empty key in line, you delete it.
 			if('' in line.keys()):
 				hoge = line.pop("")
 
