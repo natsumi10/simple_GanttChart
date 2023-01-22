@@ -3,7 +3,7 @@ import os
 import sys
 import csv
 
-from create_html import create_html
+from manage_html.create_html import write_html
 
 class SimpleGantt:
 	"""Base Simple Gantt Chart class.
@@ -106,7 +106,8 @@ def main():
 	Main function 
 	:rtype: int
 	'''
-	read_csv_file()
+	#read_csv_file()
+	write_html()
 	return 0
 
 if __name__ == "__main__":
