@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+import json
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -17,8 +18,15 @@ def write_html():
 	
 	env = Environment(loader=fileLoader)
 
+	# Read data of task info (row)
+	with open(f"{base_dir}/test_tasks_data.json", "r") as d:
+		columns = json.load(d)
+
+	# Get the data of heads(colmuns)
+	tmp_heads = "Task Name"
+
 	#rendered = env.get_template("hello_jinja.html").render(albums=albums, title="Gallery")
-	rendered = env.get_template("create_html.html").render( title="Simple GanttChart")
+	rendered = env.get_template("create_html.html").render( tmp_heads = tmp_heads,elements = columns,title="Simple GanttChart")
 
 	#Write HTML to a file - index.html
 	fileName = "index.html"

@@ -20,7 +20,24 @@
 		<table class="chart_table" border="0" height="400" width="800">
 			<tr><td height="400" width="800">
 				<div style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
-					セル1
+					<table class=tasks_table>
+						<thead>
+							<tr>
+								<th>
+									{{ tmp_heads }}
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for elem in elements %}
+							<tr>
+								
+								<td>{{ elem.name }}</td>
+								
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
 				</div>
 			</td><td height="400" width="800">
 				<div style=" width:400px; ">
