@@ -10,10 +10,10 @@ def main():
 	Main function 
 	:rtype: int
 	'''
-	"""
+	
 	with open("albums.json", "r") as d:
 		albums = json.load(d)
-	"""
+	
 	fileLoader = FileSystemLoader("templates")
 	env = Environment(loader=fileLoader)
 
