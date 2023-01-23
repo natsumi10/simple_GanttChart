@@ -5,16 +5,37 @@ import json
 
 from jinja2 import Environment, FileSystemLoader
 
+def set_keys(csv_db):
+	for key in csv_db.task_data:
+		print("\n",key,"\n")
 
-def write_html():
+def create_task_list(csv_db):
+	task_list = []
+	for key in csv_db.task_data :
+		task_list.append(csv_db.task_data[key])
+	print ("\n\n",task_list[0])
+	return task_list
 
-	#fileLoader = FileSystemLoader("templates")
+def print_csvDb_forCheck(csv_db):
+	for key in csv_db.task_data :
+		print ("the key is",key,"\n")
+		print ("data is ",csv_db.task_data[key],"\n")
+	return 0
+
+def write_html(csv_db):
+
+	print_csvDb_forCheck(csv_db)
+	task_list = []
+	task_list = create_task_list(csv_db)
+	#set_keys(csv_db)
+	
+	
+	
 	base_dir = os.path.dirname(__file__)
 	path_template = os.path.join(base_dir,"templates")
 	
-	#print (path_template)
+	
 	fileLoader = FileSystemLoader(path_template)
-	#print(fileLoader)
 	
 	env = Environment(loader=fileLoader)
 
@@ -22,11 +43,12 @@ def write_html():
 	with open(f"{base_dir}/test_tasks_data.json", "r") as d:
 		columns = json.load(d)
 
+	#print (columns)
 	# Get the data of heads(colmuns)
 	tmp_heads = "Task Name"
 
-	#rendered = env.get_template("hello_jinja.html").render(albums=albums, title="Gallery")
-	rendered = env.get_template("create_html.html").render( tmp_heads = tmp_heads,elements = columns,title="Simple GanttChart")
+	#rendered = env.get_template("create_html.html").render( tmp_heads = tmp_heads,elements = task_list,title="Simple GanttChart")
+	rendered = env.get_template("create_html.html").render( task_db = task_list,title="Simple GanttChart")
 
 	#Write HTML to a file - index.html
 	fileName = "index.html"

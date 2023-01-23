@@ -31,7 +31,7 @@ class SimpleGantt:
 		self.task_data[task_id] = data
 		hoge = self.task_data[task_id].get
 		
-		print("After is",self.task_data[task_id])
+		#print("After is",self.task_data[task_id])
 
 		return 0
 
@@ -80,7 +80,7 @@ def assemble_csv_list(csv_db,line):
 def read_csv_file():
 	'''
 	Read the csv file.
-	:rtype: list
+	:rtype: class object
 	'''
 	csv_list = []
 	csv_db = SimpleGantt()
@@ -90,6 +90,7 @@ def read_csv_file():
 		
 		# Collect all csv data into a list.(The name is "csv_list")
 		for line in csv_reader:
+			#print(line["Task Name"],"\n")
 			csv_list.append(line)
 
 			# If there is empty key in line, you delete it.
@@ -99,15 +100,22 @@ def read_csv_file():
 	assemble_csv_list(csv_db,csv_list)
 	#print ("All task ids are", csv_db.get_all_ids(),"\n")
 		
-	return 0
+	return csv_db
+
+def print_csv_db(csv_db):
+	for key in csv_db.task_data :
+		print ("the key is",key,"\n")
+		print ("data is ",csv_db.task_data[key],"\n")
+
 
 def main():
 	''' 
 	Main function 
 	:rtype: int
 	'''
-	#read_csv_file()
-	write_html()
+	csv_db = read_csv_file()
+
+	write_html(csv_db)
 	return 0
 
 if __name__ == "__main__":

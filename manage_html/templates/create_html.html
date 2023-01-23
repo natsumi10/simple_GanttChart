@@ -23,17 +23,19 @@
 					<table class=tasks_table>
 						<thead>
 							<tr>
+								{% for key in task_db[0] %}
 								<th>
-									{{ tmp_heads }}
+									{{ key }}
 								</th>
+								{% endfor %}
 							</tr>
 						</thead>
 						<tbody>
-							{% for elem in elements %}
+							{% for elem in task_db %}
 							<tr>
-								
-								<td>{{ elem.name }}</td>
-								
+								{% for key,value in elem.items() %}
+								<td>{{ value }}</td>
+								{% endfor %}
 							</tr>
 							{% endfor %}
 						</tbody>
