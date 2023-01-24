@@ -15,11 +15,21 @@ h1 {
 
 .tasks_table {
   border-collapse: collapse;
+
 }
-.tasks_table td,th{
-  border: 1px solid black;
-  padding: 8px 16px;
+.tasks_table th{
+  border: 1px solid;
+  border-color : #CCCCCC;
+  padding: 20px 20px;
   text-align: center;
+  white-space: nowrap;
+}
+.tasks_table td{
+  border: 1px solid;
+  border-color : #CCCCCC;
+  padding: 9px 16px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .chart_table{
@@ -28,6 +38,7 @@ h1 {
 .chart_table td{
 
   vertical-align: top;
+  
 }
 
 .gantt-wrap {
