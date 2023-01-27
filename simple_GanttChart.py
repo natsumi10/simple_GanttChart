@@ -106,8 +106,19 @@ def print_csv_db(csv_db):
 	for key in csv_db.task_data :
 		print ("the key is",key,"\n")
 		print ("data is ",csv_db.task_data[key],"\n")
+	return 0
 
+def start_simple_ganttchart():
+	''' 
+	Start simple GanttChart program. 
+	:rtype: int
+	'''
+	csv_db = read_csv_file()
 
+	write_html(csv_db)
+	return 0
+
+"""
 def main():
 	''' 
 	Main function 
@@ -120,3 +131,4 @@ def main():
 
 if __name__ == "__main__":
 	sys.exit(main())
+"""
