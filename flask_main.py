@@ -4,7 +4,6 @@ from manage_html.create_html import write_html
 
 app = Flask(__name__)
 
-
 def create_posts():
     created_posts = []
     created_posts = [
@@ -16,16 +15,17 @@ def create_posts():
 
 def settings():
     csv_db = read_csv_file()
-    write_html(csv_db)
+    task_db = write_html(csv_db)
     
-    return 0
+    return task_db
 
 
 @app.route("/")
 def index():
+    task_db = settings()
     created_posts = create_posts()
-    return render_template("home.html", posts=created_posts,title="Simple GanttChart")
+    return render_template("home.html", posts=created_posts,title="Simple GanttChart",task_db=task_db)
 
 if __name__ == '__main__':
-    #settings()
+    settings()
     app.run(debug=True, host='0.0.0.0')

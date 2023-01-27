@@ -5,6 +5,12 @@ import json
 
 from jinja2 import Environment, FileSystemLoader
 
+"""
+from flask import Flask, render_template, url_for,request
+
+app = Flask(__name__)
+"""
+
 def set_keys(csv_db):
 	for key in csv_db.task_data:
 		print("\n",key,"\n")
@@ -55,7 +61,7 @@ def write_html(csv_db):
 	with open(f"{base_dir}/site/{fileName}","w") as f:
 		f.write(rendered)
 	
-	return 0
+	return task_list
 """
 def main():
 	''' 
