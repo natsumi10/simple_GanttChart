@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Simple GanttChart - {{ title }}</title>
+	
+	
+	<script src="{{ url_for('static', filename='ref_ganttchart.js') }}"></script>
+	<script src="{{ url_for('static', filename='index.js') }}"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="heading">
+			<h1>{{ title }}</h1>
+		</div>
+	</div>
+	<div class="simple_gannt_chart">
+
+		<p>List defined in Python</P>
+			{% for x in posts %}
+				{{x}}
+			{% endfor %}
+	</div>
+	
+	
+</body>
+</html>
