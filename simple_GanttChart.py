@@ -61,6 +61,16 @@ def data_path():
 	'''
 	return os.path.join(base_dir(), "csv", "tasks.csv")
 
+def print_csv_db(csv_db):
+	''' 
+	Print what is csv_db inside. 
+	:rtype: int
+	'''
+	for key in csv_db.task_data :
+		print ("the key is",key,"\n")
+		print ("data is ",csv_db.task_data[key],"\n")
+	return 0
+
 def assemble_csv_list(csv_db,line):
 	'''
 	Assembles to make csv dict database and add to csv_db which is the class object
@@ -80,10 +90,14 @@ def assemble_csv_list(csv_db,line):
 def read_csv_file():
 	'''
 	Read the csv file.
-	:rtype: class object
+	:rtype: class instance.
 	'''
 	csv_list = []
+
+	#SimpleGantt class object.
 	csv_db = SimpleGantt()
+
+	#Read csv file. Make the data as dictionary.
 	with open(data_path(), "r") as fp:
 		#csv_reader = csv.reader(fp)
 		csv_reader = csv.DictReader(fp)
@@ -102,11 +116,7 @@ def read_csv_file():
 		
 	return csv_db
 
-def print_csv_db(csv_db):
-	for key in csv_db.task_data :
-		print ("the key is",key,"\n")
-		print ("data is ",csv_db.task_data[key],"\n")
-	return 0
+
 
 def start_simple_ganttchart():
 	''' 
@@ -121,7 +131,8 @@ def start_simple_ganttchart():
 """
 def main():
 	''' 
-	Main function 
+	Main function. 
+	Comment out because this python file is used as module.
 	:rtype: int
 	'''
 	csv_db = read_csv_file()

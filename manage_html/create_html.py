@@ -11,18 +11,22 @@ from flask import Flask, render_template, url_for,request
 app = Flask(__name__)
 """
 
-def set_keys(csv_db):
-	for key in csv_db.task_data:
-		print("\n",key,"\n")
-
 def create_task_list(csv_db):
+	''' 
+	Make list from csv_db dictionary.
+	:rtype: list
+	'''
 	task_list = []
 	for key in csv_db.task_data :
 		task_list.append(csv_db.task_data[key])
-	print ("\n\n",task_list[0])
+	#print ("\n\n",task_list[0])
 	return task_list
 
 def print_csvDb_forCheck(csv_db):
+	''' 
+	Print csv_db dictionary to check what is inside.
+	:rtype: list
+	'''
 	for key in csv_db.task_data :
 		print ("the key is",key,"\n")
 		print ("data is ",csv_db.task_data[key],"\n")
@@ -30,30 +34,28 @@ def print_csvDb_forCheck(csv_db):
 
 def write_html(csv_db):
 
-	print_csvDb_forCheck(csv_db)
+	#print to check what is inside.
+	#print_csvDb_forCheck(csv_db)
+
 	task_list = []
+
+	#Make the list from csv_db dictionary.
 	task_list = create_task_list(csv_db)
-	#set_keys(csv_db)
 	
 	
-	
+	# get the path to tamplates folder. 
 	base_dir = os.path.dirname(__file__)
 	path_template = os.path.join(base_dir,"templates")
 	
-	
+	# Set env which tells where is templates folder.
 	fileLoader = FileSystemLoader(path_template)
-	
 	env = Environment(loader=fileLoader)
 
-	# Read data of task info (row)
+	# Get the data of task info (row)
 	with open(f"{base_dir}/test_tasks_data.json", "r") as d:
 		columns = json.load(d)
-
-	#print (columns)
-	# Get the data of heads(colmuns)
-	tmp_heads = "Task Name"
-
-	#rendered = env.get_template("create_html.html").render( tmp_heads = tmp_heads,elements = task_list,title="Simple GanttChart")
+	
+	#create html file.
 	rendered = env.get_template("create_html.html").render( task_db = task_list,title="Simple GanttChart")
 
 	#Write HTML to a file - index.html
@@ -65,7 +67,7 @@ def write_html(csv_db):
 """
 def main():
 	''' 
-	Main function 
+	Main function. Comment out because this is python module file.
 	:rtype: int
 	'''
 	w_html = write_html()
