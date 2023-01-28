@@ -89,8 +89,14 @@ def assemble_csv_list(csv_db,line):
 	return 0
 
 def create_json_data(task_list):
-	with open('./static/tasks_data.json','w') as fp:
+	'''
+	Write tasks_data in js file.
+	:rtype: int
+	'''
+	with open('./static/tasks_data.json.js','w') as fp:
+		fp.write("var task_data = \n")
 		json.dump(task_list,fp,ensure_ascii=False)
+		fp.write(";")
 	return 0
 
 def read_csv_file():

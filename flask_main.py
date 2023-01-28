@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, redirect
-from simple_GanttChart import read_csv_file
+from simple_GanttChart import read_csv_file, create_json_data
 from manage_html.create_html import write_html
 
 app = Flask(__name__)
@@ -25,12 +25,13 @@ def settings():
     # csv_db is "SimpleGantt class" instance.
     csv_db = read_csv_file()
     
-    #The variable, task_db is the list contains ordered dictionary.
-    #for example, [OrderedDict('Id', '5827'), ('Task Name', 'Model')]
+    # The variable, task_db is the list contains ordered dictionary.
+    # For example, [OrderedDict('Id', '5827'), ('Task Name', 'Model')]
     task_db = []
     task_db = write_html(csv_db)
+    create_json_data(task_db)
 
-    #For checking what is task_db insides.
+    # For checking what is task_db insides.
     #print_database(task_db)
 
     return task_db

@@ -17,5 +17,10 @@ window.onload = function(){
 		progress: 100,
 	},
 	];
-	var gantt = new Gantt("#gantt", tasks)
+	var gantt = new Gantt("#gantt", tasks);
+	console.log (task_data);
+	console.log (tasks);
+
 }
+
+
