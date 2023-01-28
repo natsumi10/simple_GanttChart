@@ -42,7 +42,7 @@ def write_html(csv_db):
 	#Make the list from csv_db dictionary.
 	task_list = create_task_list(csv_db)
 	
-	
+
 	# get the path to tamplates folder. 
 	base_dir = os.path.dirname(__file__)
 	path_template = os.path.join(base_dir,"templates")
@@ -63,6 +63,7 @@ def write_html(csv_db):
 	with open(f"{base_dir}/site/{fileName}","w") as f:
 		f.write(rendered)
 	
+
 	return task_list
 """
 def main():

@@ -24,10 +24,10 @@ def settings():
     # gett csv data from simple_GanttChart.py
     # csv_db is "SimpleGantt class" instance.
     csv_db = read_csv_file()
-
-    task_db = []
+    
     #The variable, task_db is the list contains ordered dictionary.
     #for example, [OrderedDict('Id', '5827'), ('Task Name', 'Model')]
+    task_db = []
     task_db = write_html(csv_db)
 
     #For checking what is task_db insides.
@@ -48,3 +48,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+    settings()

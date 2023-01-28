@@ -2,6 +2,7 @@
 import os
 import sys
 import csv
+import json
 
 from manage_html.create_html import write_html
 
@@ -87,6 +88,11 @@ def assemble_csv_list(csv_db,line):
 	
 	return 0
 
+def create_json_data(task_list):
+	with open('./static/tasks_data.json','w') as fp:
+		json.dump(task_list,fp,ensure_ascii=False)
+	return 0
+
 def read_csv_file():
 	'''
 	Read the csv file.
@@ -124,8 +130,9 @@ def start_simple_ganttchart():
 	:rtype: int
 	'''
 	csv_db = read_csv_file()
-
-	write_html(csv_db)
+	
+	task_list = write_html(csv_db)
+	create_json_data(task_list)
 	return 0
 
 """
