@@ -3,6 +3,7 @@ import os
 import sys
 import csv
 import json
+from collections import OrderedDict
 
 from manage_html.create_html import write_html
 
@@ -72,19 +73,63 @@ def print_csv_db(csv_db):
 		print ("data is ",csv_db.task_data[key],"\n")
 	return 0
 
-def assemble_csv_list(csv_db,line):
-	'''
-	Assembles to make csv dict database and add to csv_db which is the class object
-	for csv database.
+def create_task_list(csv_db):
+	''' 
+	Make list from csv_db dictionary.
 	:rtype: list
 	'''
+	task_list = []
+	for key in csv_db.task_data :
+		task_list.append(csv_db.task_data[key])
+	#print ("\n\n",task_list[0])
+	return task_list
+
+def assemble_csv_list(csv_db,line):
+	'''
+	Assemble the csv data and add to csv_db.task_data.
+	Before adding data, change some keys to fit to database.
+	For example, Id -> id or Task Name -> name
+	If you want to change the key name, you should change it here.
+	:rtype: int
+	'''
 	data = []
+	new_key = ""
 
 	# Add the id number to csv_db class object
 	for item in line:
+			print (f"\nBefore : {item}\n")
+			
+			new_item = OrderedDict()
 			task_id = int(item["Id"])
+
+			#change the key : Id -> id
+			new_item["id"] = task_id
+			item.pop("Id")
+
+			#change the key : Task Name -> name
+			new_item["name"] = item.pop("Task Name")
+
+			#change the key : Start Date -> start
+			new_item["start"] = item.pop("Start Date")
+
+			#change the key : Due Date -> end
+			new_item["end"] = item.pop("Due Date")
+
+			#Create progress data : progress
+			new_item["progress"] = int(100)
+
+			# Change the order of OrderedDict.
+			# And make all keys to lower case letter
+			for key in item:
+				tmp_key =key.lower()
+				print (tmp_key)
+				new_item[tmp_key] = item[key]
+
+			#new_item.update(item)
+			print (f"\nAfter : {new_item}\n")
+
 			csv_db.add_id(task_id)
-			csv_db.add_work_info(task_id,item)
+			csv_db.add_work_info(task_id,new_item)
 	
 	return 0
 
@@ -129,10 +174,10 @@ def read_csv_file():
 	return csv_db
 
 
-
-def start_simple_ganttchart():
+def start_with_flask():
 	''' 
-	Start simple GanttChart program. 
+	Start simple GanttChart program.
+	Get task database from csv and Create html via Flask. 
 	:rtype: int
 	'''
 	csv_db = read_csv_file()
@@ -140,6 +185,16 @@ def start_simple_ganttchart():
 	task_list = write_html(csv_db)
 	create_json_data(task_list)
 	return 0
+
+def get_task_database():
+	''' 
+	Get task database from csv and Return them as list.
+	:rtype: int
+	'''
+	csv_db = read_csv_file()
+	task_list = create_task_list(csv_db)
+	return task_list
+
 
 """
 def main():
