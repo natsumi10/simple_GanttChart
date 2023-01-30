@@ -13,18 +13,18 @@ h1 {
   font-size: 1.8rem;
 }
 
-.tasks_table {
+.tasks_table, .d_table {
   border-collapse: collapse;
 
 }
-.tasks_table th{
+.tasks_table th, .d_table  th{
   border: 1px solid;
   border-color : #CCCCCC;
   padding: 20px 20px;
   text-align: center;
   white-space: nowrap;
 }
-.tasks_table td{
+.tasks_table td, .d_table td{
   border: 1px solid;
   border-color : #CCCCCC;
   padding: 9px 16px;

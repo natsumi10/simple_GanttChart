@@ -18,9 +18,18 @@ window.onload = function(){
 	},
 	];
 	var gantt = new Gantt("#gantt", task_data);
-	console.log (task_data);
-	console.log (tasks);
 
+	/*
+	console.log (task_data);
+	*/
+	
+	const d_tasks = {
+		createTable(){
+			 //console.log('Hello! This is method.');
+			var header = [];
+		}
+	};
+	d_tasks.createTable();
 }
 
 
