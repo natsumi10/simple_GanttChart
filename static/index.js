@@ -18,18 +18,20 @@ window.onload = function(){
 	},
 	];
 	var gantt = new Gantt("#gantt", task_data);
-
-	/*
-	console.log (task_data);
-	*/
 	
-	const d_tasks = {
-		createTable(){
-			 //console.log('Hello! This is method.');
-			var header = [];
+	console.log (task_data[0]);
+
+	var header = [];
+	for( const item of task_data){
+		console.log(item)
+		
+		for( var key in item){	
+			console.log("item is :"+item[key])
 		}
-	};
-	d_tasks.createTable();
+	}
+		
+	
+	//createTable(task_data);
 }
 
 
