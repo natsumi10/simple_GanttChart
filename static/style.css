@@ -45,7 +45,6 @@ h1 {
   box-shadow: 0px 0px 4px #888;
 }
 
-
 .gantt .grid-background {
   fill: none; }
 
@@ -143,7 +142,7 @@ h1 {
 
 .gantt-container {
   position: relative;
-  overflow: auto;
+  /*overflow: auto;*/
   font-size: 12px; }
   .gantt-container .popup-wrapper {
     position: absolute;
@@ -165,4 +164,3 @@ h1 {
       margin: 0 0 0 -5px;
       border: 5px solid transparent;
       border-top-color: rgba(0, 0, 0, 0.8); }
-      
