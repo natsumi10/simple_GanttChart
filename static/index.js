@@ -1,33 +1,25 @@
 window.onload = function(){
-	/*var tasks = [
-	{
-		id: 'id1',
-		name: 'Shot A',
-		description: 'The task of shot A',
-		start: '2023-01-22',
-		end: '2023-01-27',
-		progress: 100,
-	},
-	{
-		id: 'id2',
-		name: 'Shot B',
-		description: 'The task of shot B',
-		start: '2023-01-27',
-		end: '2023-02-03',
-		progress: 100,
-	},
-	];*/
+	
 	let gantt = new Gantt("#gantt", task_data);
+	let gantt_2 = new Gantt("#gantt_2", task_data);
 	
 	//console.log (task_data[0]);
 	function move_scroll_x(){
-		let tmp_rect = document.querySelector("#gantt > g.grid > rect.today-highlight")
+		/*Get x positon of today-highlight in rect */
+		let tmp_rect = document.querySelector("#gantt > g.grid > rect.today-highlight");
+		let x_value = tmp_rect["x"]["animVal"]["value"];
+		let element = document.querySelector(".gantt_chart_table");
+		element.scrollLeft = x_value
+		//let domRect = element.scrollLeft;
 
-		console.log(tmp_rect["x"]["animVal"]["value"])
-		console.log(tmp_rect)
+		let element_2 = document.querySelector(".gantt_chart_table_2");
+		element_2.scrollLeft = x_value
+
+		//console.log(element);
+		//console.log(tmp_rect);
 	}
 	
-	let scroll_pos = move_scroll_x()
+
 
 	/*Start dynamic task table here.*/
 	let header = [];
@@ -60,13 +52,13 @@ window.onload = function(){
 			let row = table.insertRow(-1);
 			let cell1 = row.insertCell(-1);
 			cell1.className = 'item';
-			cell1.innerHTML = r;
+			cell1.innerHTML = (r+1);
 
 			for(c=0; c<header.length; c++){
 				let tmp_header = header[c];
 				let tmp_value = task_data[r][tmp_header];
-				console.log("key is :"+tmp_header);
-				console.log("value is :"+tmp_value);
+				//console.log("key is :"+tmp_header);
+				//console.log("value is :"+tmp_value);
 				//console.log("c is :"+c)
 				let cell = row.insertCell(-1);
 				cell.className = 'value';
@@ -78,6 +70,8 @@ window.onload = function(){
 		}
 	}
 		
-	//createTable(task_data);
+	createTable(task_data);
+	/* Run move_scroll_x function.*/
+	let scroll_pos = move_scroll_x()
 }
 

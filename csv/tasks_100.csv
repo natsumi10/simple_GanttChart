@@ -1,0 +1,101 @@
+Id,Task Name,Link,Description,Status,Assigned To,Reviewer,Start Date,Due Date,Bid,Duration,Project
+5827,Model,TestMale,Test Description,ip,Artist 1,lead 1,2023-02-01,2023-02-08,5,3,My Animation Project
+5835,Concept,GrilChar,Test Description,ip,Artist 2,lead 2,2023-02-02,2023-02-09,2,6,My Animation Project
+5932,Concept,Stone golem,Test Description,ip,Artist 1,lead 1,2023-02-03,2023-02-10,5,5,My Animation Project
+5860,Concept,car,Test Description,ip,Artist 2,lead 2,2023-02-04,2023-02-11,4,3,My Animation Project
+5828,Rig,TestMale,Test Description,ip,Artist 1,lead 1,2023-02-05,2023-02-12,3,4,My Animation Project
+5833,Model,GrilChar,Test Description,ip,Artist 2,lead 2,2023-02-06,2023-02-13,4,4,My Animation Project
+5830,Texture,TestMale,Test Description,ip,Artist 1,lead 1,2023-02-07,2023-02-14,5,5,My Animation Project
+5861,Model,car,Test Description,ip,Artist 2,lead 2,2023-02-08,2023-02-15,8,3,My Animation Project
+5836,Texture,GrilChar,Test Description,ip,Artist 1,lead 1,2023-02-09,2023-02-16,2,5,My Animation Project
+5930,Model,Stone golem,Test Description,ip,Artist 2,lead 2,2023-02-10,2023-02-17,10,9,My Animation Project
+5831,Groom,TestMale,Test Description,ip,Artist 1,lead 1,2023-02-11,2023-02-18,2,5,My Animation Project
+5862,Texture,car,Test Description,ip,Artist 2,lead 2,2023-02-12,2023-02-19,5,5,My Animation Project
+5931,Rig,Stone golem,Test Description,ip,Artist 1,lead 1,2023-02-13,2023-02-20,5,3,My Animation Project
+5933,Texture,Stone golem,Test Description,ip,Artist 2,lead 2,2023-02-14,2023-02-21,5,3,My Animation Project
+5834,Rig,GrilChar,Test Description,ip,Artist 1,lead 1,2023-02-15,2023-02-22,5,5,My Animation Project
+5863,Rigging,car,Test Description,ip,Artist 2,lead 2,2023-02-16,2023-02-23,5,4,My Animation Project
+5893,Layout,TES_123,Test Description,ip,Artist 1,lead 1,2023-02-17,2023-02-24,10,10,My Animation Project
+5934,Groom,Stone golem,Test Description,ip,Artist 2,lead 2,2023-02-18,2023-02-25,5,4,My Animation Project
+5935,Cloth,Stone golem,Test Description,ip,Artist 1,lead 1,2023-02-19,2023-02-26,5,4,My Animation Project
+5832,Cloth,TestMale,Test Description,ip,Artist 2,lead 2,2023-02-20,2023-02-27,2,8,My Animation Project
+5837,Groom,GrilChar,Test Description,ip,Artist 1,lead 1,2023-02-21,2023-02-28,8,6,My Animation Project
+5838,Cloth,GrilChar,Test Description,ip,Artist 2,lead 2,2023-02-22,2023-03-01,9,6,My Animation Project
+6887,Plate Online,SHA_01,Test Description,ip,Artist 1,lead 1,2023-02-23,2023-03-02,5,2,My Animation Project
+6883,Roto,SHA_01,Test Description,ip,Artist 1,lead 2,2023-02-24,2023-03-03,2,5,My Animation Project
+6884,Tracking,SHA_01,Test Description,ip,Artist 2,lead 1,2023-02-25,2023-03-04,5,5,My Animation Project
+6886,Layout,SHA_01,Test Description,ip,Artist 1,lead 2,2023-02-26,2023-03-05,4,2,My Animation Project
+6885,Animation,SHA_01,Test Description,ip,Artist 2,lead 1,2023-02-27,2023-03-06,3,5,My Animation Project
+6889,FX,SHA_01,Test Description,ip,Artist 1,lead 2,2023-02-28,2023-03-07,4,5,My Animation Project
+6892,Cloth,SHA_01,Test Description,ip,Artist 2,lead 1,2023-03-01,2023-03-08,5,5,My Animation Project
+6890,Lighting,SHA_01,Test Description,ip,Artist 1,lead 2,2023-03-02,2023-03-09,8,5,My Animation Project
+6891,Comp,SHA_01,Test Description,ip,Artist 2,lead 1,2023-03-03,2023-03-10,2,5,My Animation Project
+5894,Animation,TES_123,Test Description,ip,Artist 1,lead 2,2023-03-04,2023-03-11,10,3,My Animation Project
+5895,FX,TES_123,Test Description,ip,Artist 2,lead 1,2023-03-05,2023-03-12,2,6,My Animation Project
+5896,Lighting,TES_123,Test Description,ip,Artist 1,lead 2,2023-03-06,2023-03-13,5,5,My Animation Project
+5897,Comp,TES_123,Test Description,ip,Artist 2,lead 1,2023-03-07,2023-03-14,5,3,My Animation Project
+6817,Model,Maya_model,Test Description,ip,Artist 1,lead 2,2023-03-08,2023-03-15,5,4,My Animation Project
+6818,Rig,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-09,2023-03-16,5,4,My Animation Project
+6819,Concept,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-10,2023-03-17,5,5,My Animation Project
+6820,Texture,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-11,2023-03-18,10,3,My Animation Project
+6821,Groom,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-12,2023-03-19,5,5,My Animation Project
+6822,Cloth,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-13,2023-03-20,5,9,My Animation Project
+6823,Model,TestMale,Test Description,ip,Artist 1,lead 2,2023-03-14,2023-03-21,2,5,My Animation Project
+6824,Concept,GrilChar,Test Description,ip,Artist 2,lead 1,2023-03-15,2023-03-22,8,5,My Animation Project
+6825,Concept,Stone golem,Test Description,ip,Artist 1,lead 2,2023-03-16,2023-03-23,9,3,My Animation Project
+6826,Concept,car,Test Description,ip,Artist 2,lead 1,2023-03-17,2023-03-24,5,3,My Animation Project
+6827,Rig,TestMale,Test Description,ip,Artist 1,lead 2,2023-02-05,2023-03-25,2,5,My Animation Project
+6828,Model,GrilChar,Test Description,ip,Artist 1,lead 1,2023-02-06,2023-03-26,5,4,My Animation Project
+6829,Texture,TestMale,Test Description,ip,Artist 2,lead 2,2023-02-07,2023-03-27,4,10,My Animation Project
+6830,Model,car,Test Description,ip,Artist 1,lead 1,2023-02-08,2023-03-28,3,4,My Animation Project
+6831,Texture,GrilChar,Test Description,ip,Artist 2,lead 2,2023-02-09,2023-03-29,4,4,My Animation Project
+6832,Model,Stone golem,Test Description,ip,Artist 1,lead 1,2023-02-10,2023-03-30,5,8,My Animation Project
+6833,Groom,TestMale,Test Description,ip,Artist 2,lead 2,2023-02-11,2023-03-31,8,6,My Animation Project
+6834,Texture,car,Test Description,ip,Artist 1,lead 1,2023-02-12,2023-04-01,2,6,My Animation Project
+6835,Rig,Stone golem,Test Description,ip,Artist 2,lead 2,2023-02-13,2023-04-02,10,2,My Animation Project
+6836,Texture,Stone golem,Test Description,ip,Artist 1,lead 1,2023-02-14,2023-04-03,2,5,My Animation Project
+6837,Rig,GrilChar,Test Description,ip,Artist 2,lead 2,2023-02-15,2023-04-04,5,5,My Animation Project
+6838,Rigging,car,Test Description,ip,Artist 1,lead 1,2023-02-16,2023-04-05,5,2,My Animation Project
+6839,Layout,TES_123,Test Description,ip,Artist 2,lead 2,2023-02-17,2023-04-06,5,5,My Animation Project
+6840,Groom,Stone golem,Test Description,ip,Artist 1,lead 1,2023-02-18,2023-04-07,5,5,My Animation Project
+6841,Cloth,Stone golem,Test Description,ip,Artist 2,lead 2,2023-02-19,2023-04-08,5,5,My Animation Project
+6842,Cloth,TestMale,Test Description,ip,Artist 1,lead 1,2023-02-20,2023-04-09,10,5,My Animation Project
+6843,Groom,GrilChar,Test Description,ip,Artist 2,lead 2,2023-02-21,2023-04-10,5,5,My Animation Project
+6844,Cloth,GrilChar,Test Description,ip,Artist 1,lead 1,2023-02-22,2023-04-11,5,6,My Animation Project
+6845,Plate Online,SHA_01,Test Description,ip,Artist 2,lead 1,2023-02-23,2023-04-12,2,2,My Animation Project
+6846,Roto,SHA_01,Test Description,ip,Artist 1,lead 2,2023-02-24,2023-04-13,8,5,My Animation Project
+6847,Tracking,SHA_01,Test Description,ip,Artist 2,lead 1,2023-02-25,2023-04-14,9,5,My Animation Project
+6848,Layout,SHA_01,Test Description,ip,Artist 1,lead 2,2023-02-26,2023-04-15,5,2,My Animation Project
+6849,Animation,SHA_01,Test Description,ip,Artist 2,lead 1,2023-02-27,2023-04-16,2,5,My Animation Project
+6850,FX,SHA_01,Test Description,ip,Artist 1,lead 2,2023-02-28,2023-04-17,5,5,My Animation Project
+6851,Cloth,SHA_01,Test Description,ip,Artist 2,lead 1,2023-03-01,2023-04-18,4,5,My Animation Project
+6852,Lighting,SHA_01,Test Description,ip,Artist 1,lead 2,2023-03-02,2023-04-19,3,5,My Animation Project
+6853,Comp,SHA_01,Test Description,ip,Artist 2,lead 1,2023-03-03,2023-04-20,4,5,My Animation Project
+6854,Animation,TES_123,Test Description,ip,Artist 1,lead 2,2023-03-04,2023-04-21,5,3,My Animation Project
+6855,FX,TES_123,Test Description,ip,Artist 2,lead 1,2023-03-05,2023-04-22,8,6,My Animation Project
+6856,Lighting,TES_123,Test Description,ip,Artist 1,lead 2,2023-03-06,2023-04-23,2,5,My Animation Project
+6857,Comp,TES_123,Test Description,ip,Artist 2,lead 1,2023-03-07,2023-04-24,10,3,My Animation Project
+6858,Model,Maya_model,Test Description,ip,Artist 1,lead 2,2023-03-08,2023-04-25,2,4,My Animation Project
+6859,Rig,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-09,2023-04-26,5,4,My Animation Project
+6860,Concept,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-10,2023-04-27,5,5,My Animation Project
+6861,Texture,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-11,2023-04-28,5,3,My Animation Project
+6862,Groom,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-12,2023-04-29,5,5,My Animation Project
+6863,Cloth,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-13,2023-04-30,5,9,My Animation Project
+6864,Animation,TES_123,Test Description,ip,Artist 1,lead 2,2023-03-14,2023-05-01,10,5,My Animation Project
+6865,FX,TES_123,Test Description,ip,Artist 2,lead 1,2023-03-15,2023-05-02,5,5,My Animation Project
+6866,Lighting,TES_123,Test Description,ip,Artist 1,lead 2,2023-03-16,2023-05-03,5,3,My Animation Project
+6867,Comp,TES_123,Test Description,ip,Artist 2,lead 1,2023-03-17,2023-05-04,2,3,My Animation Project
+6868,Model,Maya_model,Test Description,ip,Artist 1,lead 2,2023-03-18,2023-05-05,8,5,My Animation Project
+6869,Rig,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-19,2023-05-06,9,4,My Animation Project
+6870,Concept,Maya_model,Test Description,wtg,Artist 1,lead 1,2023-03-20,2023-05-07,5,10,My Animation Project
+6871,Texture,Maya_model,Test Description,wtg,Artist 2,lead 2,2023-03-21,2023-05-08,2,4,My Animation Project
+6872,Groom,Maya_model,Test Description,wtg,Artist 1,lead 1,2023-03-22,2023-05-09,5,4,My Animation Project
+6873,Cloth,Maya_model,Test Description,wtg,Artist 2,lead 2,2023-03-23,2023-05-10,4,8,My Animation Project
+6874,Groom,Maya_model,Test Description,wtg,Artist 1,lead 1,2023-03-24,2023-05-11,3,6,My Animation Project
+6875,Cloth,Maya_model,Test Description,wtg,Artist 2,lead 2,2023-03-25,2023-05-12,4,6,My Animation Project
+6876,Groom,Maya_model,Test Description,wtg,Artist 1,lead 1,2023-03-26,2023-05-13,5,2,My Animation Project
+6877,Cloth,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-27,2023-05-14,8,5,My Animation Project
+6878,Groom,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-28,2023-05-15,2,5,My Animation Project
+6879,Cloth,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-29,2023-05-16,10,2,My Animation Project
+6880,Groom,Maya_model,Test Description,wtg,Artist 2,lead 1,2023-03-30,2023-03-27,2,5,My Animation Project
+6881,Cloth,Maya_model,Test Description,wtg,Artist 1,lead 2,2023-03-31,2023-03-28,5,5,My Animation Project

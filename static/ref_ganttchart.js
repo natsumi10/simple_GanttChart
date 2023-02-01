@@ -615,7 +615,10 @@ var Gantt=function(){
 				append_to:this.layers.grid
 			}),
 			i.attr(this.$svg,{
-				height:e+this.options.padding+100,width:"100%"
+				/*height:e+this.options.padding+100,width:"100%"*/
+				/*Delete padding+100*/
+				height:e+this.options.padding,width:"100%"
+
 			})
 		}make_grid_rows(){
 			const t=n("g",{append_to:this.layers.grid}),

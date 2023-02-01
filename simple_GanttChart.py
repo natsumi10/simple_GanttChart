@@ -61,7 +61,7 @@ def data_path():
 	Return the file path of cvs path
 	:rtype: str
 	'''
-	return os.path.join(base_dir(), "csv", "tasks.csv")
+	return os.path.join(base_dir(), "csv", "tasks_100.csv")
 
 def print_csv_db(csv_db):
 	''' 
@@ -86,18 +86,19 @@ def create_task_list(csv_db):
 
 def assemble_csv_list(csv_db,line):
 	'''
-	Assemble the csv data and add to csv_db.task_data.
-	Before adding data, change some keys to fit to database.
-	For example, Id -> id or Task Name -> name
-	If you want to change the key name, you should change it here.
-	:rtype: int
+		Assemble the csv data and add to csv_db.task_data.
+		Before adding data, change some keys to fit to database.
+		For example, Id -> id or Task Name -> name
+		If you want to change the key name, you should change it here.
+		:rtype: int
 	'''
+	
 	data = []
 	new_key = ""
 
 	# Add the id number to csv_db class object
 	for item in line:
-			print (f"\nBefore : {item}\n")
+			#print (f"\nBefore : {item}\n")
 			
 			new_item = OrderedDict()
 			task_id = int(item["Id"])
@@ -122,11 +123,11 @@ def assemble_csv_list(csv_db,line):
 			# And make all keys to lower case letter
 			for key in item:
 				tmp_key =key.lower()
-				print (tmp_key)
+				#print (tmp_key)
 				new_item[tmp_key] = item[key]
 
 			#new_item.update(item)
-			print (f"\nAfter : {new_item}\n")
+			#print (f"\nAfter : {new_item}\n")
 
 			csv_db.add_id(task_id)
 			csv_db.add_work_info(task_id,new_item)

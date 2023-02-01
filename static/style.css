@@ -17,14 +17,14 @@ h1 {
   border-collapse: collapse;
 
 }
-.tasks_table th, .d_table  th{
+.tasks_table th, .d_table  th, .container th{
   border: 1px solid;
   border-color : #CCCCCC;
   padding: 20px 20px;
   text-align: center;
   white-space: nowrap;
 }
-.tasks_table td, .d_table td{
+.tasks_table td, .d_table td, .container td{
   border: 1px solid;
   border-color : #CCCCCC;
   padding: 9px 16px;

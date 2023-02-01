@@ -13,47 +13,86 @@
 	<div class="container">
 		<div class="heading">
 			<h1>{{ title }}</h1>
+			<p>これはPythonによって生成される、静的なタスクリスト。</p>
+			<p>非常に高速なアーティストのタスク確認用のリストです。</p>
 		</div>
 	</div>
 	<div class="simple_gannt_chart">
-		<table class="chart_table" border="0" height="400" width="800">
-			<tr><td height="400" width="800">
-				<div style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
-					
-					<table class="tasks_table">
-						<thead>
-							{% set task_header=namespace(item=1) %}
-							<tr >
-								{% for key in task_db[0] %}
-								<th  id="{{'item%03d' | format(task_header.item)}}">
-									{{ key }}
-								</th>
-								{% set task_header.item = task_header.item + 1 %}
+		<table class="chart_table" border="0" height="280" width="800">
+			<tr>
+				<td height="280" width="800">
+					<div style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
+						<table class="tasks_table">
+							<thead>
+								{% set task_header=namespace(item=1) %}
+								<tr >
+									<th></th>
+									{% for key in task_db[0] %}
+									<th  id="{{'item%03d' | format(task_header.item)}}">
+										{{ key }}
+									</th>
+									{% set task_header.item = task_header.item + 1 %}
+									{% endfor %}
+								</tr>
+							</thead>
+							<tbody>
+								{% set task_header_row=namespace(row=1) %}
+								{% for elem in task_db %}
+								{% set task_header=namespace(item=1) %}
+								<tr class="dnd-moved">
+									<td >{{task_header_row.row}}</td>
+									{% for key,value in elem.items() %}
+									<td id="{{'item%03d' | format(task_header.item)}}">{{ value }}</td>
+									{% set task_header.item = task_header.item + 1 %}
+									
+									{% endfor %}
+									{% set task_header_row.row = task_header_row.row + 1 %}
+								</tr>
 								{% endfor %}
-							</tr>
-						</thead>
-						<tbody>
-							
-							{% for elem in task_db %}
-							{% set task_header=namespace(item=1) %}
-							<tr class="dnd-moved">
-								{% for key,value in elem.items() %}
-								<td id="{{'item%03d' | format(task_header.item)}}">{{ value }}</td>
-								{% set task_header.item = task_header.item + 1 %}
-								{% endfor %}
-							</tr>
-							{% endfor %}
-						</tbody>
-					</table>
-				</div>
-			</td><td height="400" width="800">
-				<div style=" width:400px; ">
-					<div class='gantt-wrap'>
-						<svg id="gantt"></svg>
+							</tbody>
+						</table>
 					</div>
-				</div>
-			</td></tr>
+				</td>
+
+				<td height="280" width="800">
+					<div class = "gantt_chart_table" style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
+					<table class="tasks_table">
+							<div class='gantt-wrap'>
+								<svg id="gantt"></svg>
+							</div>
+					</table>
+					</div>
+				</td>
+			</tr>
 		</table>
 	</div>
+
+	<div class="heading">
+		<br>
+		<h1>Dynamic Task Table</h1>
+		<p>これはJsonファイルを元に生成された動的なタスクリスト。</p>
+		<p>編集可能なマネジメント用のタスクリストです。</p>
+	</div>
+	<table class="chart_table" border="0" height="280" width="800" overflow:auto;>
+		<tr>
+			<td>
+				<div class="container" style="height:280px; width:400px; overflow:auto; box-shadow: 0px 0px 4px #888">
+					<div class = dynamic_table>
+						<table class="d_table">
+						</table>
+					</div>
+				</div>
+			</td>
+			<td height="280" width="800">
+					<div class = "gantt_chart_table_2" style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
+					<table class="tasks_table">
+							<div class='gantt-wrap'>
+								<svg id="gantt_2"></svg>
+							</div>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
