@@ -6,4 +6,5 @@ CSVファイルを読み込んでタスクリストを作成し、そのデー�
 
 <br>
 以下はそれぞれのタスクリストとガントチャートの画像です。
+
 ![Test Image 3](/image/simple_gantt_chart_main.PNG)
