@@ -13,9 +13,10 @@ CSVファイルを読み込みデータベース化し、そのデータを元�
 
 ### 将来的な展望
 
+- ShotGrid REST APIを用いたShotGridとの連携
+
 - AWS及びDeadlineとの連携
 
-- ShotGrid REST APIを用いたShotGridガントチャートの表示速度の高速化及び効率化
 
 ##
 以下は実際に表示されるWebページのスクリーンショットになります。
