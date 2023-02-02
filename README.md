@@ -8,4 +8,4 @@ CSVファイルを読み込みタスクリストを作成し、そのデータ�
 
 
 
-![Test Image 3](/image/simple_gantt_chart_main.png)
+![Test Image 1](/image/simple_gantt_chart_main_v01.png)
