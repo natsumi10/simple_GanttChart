@@ -8,3 +8,16 @@ CSVファイルを読み込みデータベース化し、そのデータを元�
 
 
 ![Test Image 1](/image/simple_gantt_chart_main_v01.png)
+
+## 今後予定している追加実装。
+
+- CSVファイルのダウンロード機能の実装
+
+- Django データベースとの連携（別リポジトリにて作成予定）
+
+
+## 将来的な展望
+
+- AWS及びDeadlineとの連携
+
+- ShotGrid REST APIを用いたShotGridガントチャートの表示速度の高速化及び効率化
