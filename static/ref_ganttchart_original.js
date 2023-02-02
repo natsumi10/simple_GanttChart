@@ -1,5 +1,4 @@
-/*
-	The MIT License (MIT)
+/*The MIT License (MIT)
 
 Copyright (c) 2016 Frappe Technologies Pvt. Ltd.
 
@@ -8,9 +7,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 */
-
 var Gantt=function(){
 	"use strict";
 	const t={en:["January","February","March","April","May","June","July","August","September","October","November","December"],zh:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]};
@@ -814,6 +811,7 @@ var Gantt=function(){
 			t<e&&this.$svg.setAttribute("width",e)
 		}set_scroll_position(){
 			const t=this.$svg.parentElement;
+			
 			if(!t)return;
 			const s=e.diff(
 				this.get_oldest_starting_date(),
