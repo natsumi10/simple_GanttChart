@@ -15,7 +15,7 @@ CSVファイルを読み込みデータベース化し、そのデータを元�
 
 - ShotGrid REST APIを用いたShotGridとの連携
 
-- AWS及びDeadlineとの連携
+- AWS及びDeadlineとの連携（現在勉強中）
 
 
 ##
