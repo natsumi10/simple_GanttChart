@@ -14,7 +14,10 @@ def main():
 	with open("albums.json", "r") as d:
 		albums = json.load(d)
 	
+	# Set fileLoader to see where is the html tamplates folder.
 	fileLoader = FileSystemLoader("templates")
+
+	# Load the path to templates folder.
 	env = Environment(loader=fileLoader)
 
 	#rendered = env.get_template("hello_jinja.html").render(albums=albums, title="Gallery")
