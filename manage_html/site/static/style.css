@@ -13,18 +13,31 @@ h1 {
   font-size: 1.8rem;
 }
 
-.tasks_table {
+.chart_table{
+  border: 0px;
+  height: 280px;
+  width: 1000px;
+}
+
+.task_list,.gantt_chart_table,.gantt_chart_table_2{
+  height:280px;
+  width:500px;
+  overflow-x:scroll;
+  box-shadow: 0px 0px 4px #888
+}
+
+table {
   border-collapse: collapse;
 
 }
-.tasks_table th{
+.tasks_table th, .d_table  th{
   border: 1px solid;
   border-color : #CCCCCC;
   padding: 20px 20px;
   text-align: center;
   white-space: nowrap;
 }
-.tasks_table td{
+.tasks_table td, .d_table td{
   border: 1px solid;
   border-color : #CCCCCC;
   padding: 9px 16px;
@@ -44,7 +57,6 @@ h1 {
 .gantt-wrap {
   box-shadow: 0px 0px 4px #888;
 }
-
 
 .gantt .grid-background {
   fill: none; }
@@ -143,7 +155,7 @@ h1 {
 
 .gantt-container {
   position: relative;
-  overflow: auto;
+  /*overflow: auto;*/
   font-size: 12px; }
   .gantt-container .popup-wrapper {
     position: absolute;
@@ -165,4 +177,3 @@ h1 {
       margin: 0 0 0 -5px;
       border: 5px solid transparent;
       border-top-color: rgba(0, 0, 0, 0.8); }
-      

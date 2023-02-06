@@ -1,34 +1,84 @@
-
-window.onload = function() {
-  // タスクを用意
-  var tasks = [
-    {
-      id: 'id1',
-      name: 'Shot A',
-      description: 'The task of shot A',
-      start: '2023-01-22',
-      end: '2023-01-27',
-      progress: 100,
-    },
-    {
-      id: 'id2',
-      name: 'Shot B',
-      description: 'The task of shot B',
-      start: '2023-01-27',
-      end: '2023-02-03',
-      progress: 100,
-    },
-  ];
+window.onload = function(){
   
-  // gantt をセットアップ
-  var gantt = new Gantt("#gantt", tasks, {
-    // ダブルクリック時
-    on_click: (task) => {
-      console.log(task.description);
-    },
-    // 日付変更時
-    on_date_change: (task, start, end) => {
-      console.log(`${task.name}: change date`);
-    },
-  });
-};
+  const gantt = new Gantt("#gantt", task_data);
+  const gantt_2 = new Gantt("#gantt_2", task_data);
+  let test_log = gantt.t;
+  console.log(test_log);
+  
+  //console.log (task_data[0]);
+  function move_scroll_x(){
+    /*Get x positon of today-highlight in rect */
+    let tmp_rect = document.querySelector("#gantt > g.grid > rect.today-highlight");
+    let x_value = tmp_rect["x"]["animVal"]["value"];
+    let element = document.querySelector(".gantt_chart_table");
+    let row_x = 38;
+    let mergin = row_x * 3;
+    element.scrollLeft = x_value - mergin;
+    //let domRect = element.scrollLeft;
+
+    let element_2 = document.querySelector(".gantt_chart_table_2");
+    element_2.scrollLeft = x_value - mergin;
+
+
+
+    //console.log(tmp_elem);
+    //console.log(tmp_rect);
+  }
+  
+
+
+  /*Start dynamic task table here.*/
+  let header = [];
+  function createTable(task_data){
+    for( let key in task_data[0]){
+      //console.log("key is :"+key)
+      header.push(key)
+    }
+    let table = document.querySelector('table.d_table');
+    let row = table.insertRow(-1);
+    let th0 = document.createElement("th");
+    row.appendChild(th0);
+    th0.innerHTML=" ";
+    th0.width = 30;
+
+    for(let i=0; i<header.length; i++){
+      let th = document.createElement("th");
+      row.appendChild(th);
+      th.innerHTML=header[i];
+      //console.log("key is :"+header[i])
+      th.width = 100;
+    }
+    table.width = 30 + 100*header.length;
+    //table.width = 100*header.length;
+
+    
+    
+    for( let r=0; r<task_data.length; r++){
+      //console.log(item)
+      let row = table.insertRow(-1);
+      let cell1 = row.insertCell(-1);
+      cell1.className = 'item';
+      cell1.innerHTML = (r+1);
+
+      for(c=0; c<header.length; c++){
+        let tmp_header = header[c];
+        let tmp_value = task_data[r][tmp_header];
+        //console.log("key is :"+tmp_header);
+        //console.log("value is :"+tmp_value);
+        //console.log("c is :"+c)
+        let cell = row.insertCell(-1);
+        cell.className = 'value';
+        cell.setAttribute('contenteditable','true');
+        cell.setAttribute('id','R'+r+'C'+c);
+        cell.innerText = (tmp_value)
+      }
+
+    }
+  }
+    
+  createTable(task_data);
+  /* Run move_scroll_x function.*/
+  let scroll_pos = move_scroll_x()
+
+}
+
