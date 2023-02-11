@@ -19,55 +19,56 @@
 			<p>アーティスト用の非常に高速なタスクリストです。</p>
 		</div>
 	</div>
-	<div class="simple_gannt_chart">
-		<table class="chart_table">
-			<tr>
-				<td >
-					<div class = "task_list">
+	<div class="container-fluid">
+		<div class="simple_gannt_chart">
+			<table class="chart_table">
+				<tr>
+					<td >
+						<div class = "task_list">
+							<table class="tasks_table">
+								<thead>
+									{% set task_header=namespace(item=1) %}
+									<tr >
+										<th></th>
+										{% for key in task_db[0] %}
+										<th  id="{{'item%03d' | format(task_header.item)}}">
+											{{ key }}
+										</th>
+										{% set task_header.item = task_header.item + 1 %}
+										{% endfor %}
+									</tr>
+								</thead>
+								<tbody>
+									{% set task_header_row=namespace(row=1) %}
+									{% for elem in task_db %}
+									{% set task_header=namespace(item=1) %}
+									<tr >
+										<td >{{task_header_row.row}}</td>
+										{% for key,value in elem.items() %}
+										<td id="{{'item%03d' | format(task_header.item)}}">{{ value }}</td>
+										{% set task_header.item = task_header.item + 1 %}
+										{% endfor %}
+										{% set task_header_row.row = task_header_row.row + 1 %}
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					</td>
+
+					<td >
+						<div class = "gantt_chart_table" >
 						<table class="tasks_table">
-							<thead>
-								{% set task_header=namespace(item=1) %}
-								<tr >
-									<th></th>
-									{% for key in task_db[0] %}
-									<th  id="{{'item%03d' | format(task_header.item)}}">
-										{{ key }}
-									</th>
-									{% set task_header.item = task_header.item + 1 %}
-									{% endfor %}
-								</tr>
-							</thead>
-							<tbody>
-								{% set task_header_row=namespace(row=1) %}
-								{% for elem in task_db %}
-								{% set task_header=namespace(item=1) %}
-								<tr >
-									<td >{{task_header_row.row}}</td>
-									{% for key,value in elem.items() %}
-									<td id="{{'item%03d' | format(task_header.item)}}">{{ value }}</td>
-									{% set task_header.item = task_header.item + 1 %}
-									{% endfor %}
-									{% set task_header_row.row = task_header_row.row + 1 %}
-								</tr>
-								{% endfor %}
-							</tbody>
+								<div class='gantt-wrap'>
+									<svg id="gantt"></svg>
+								</div>
 						</table>
-					</div>
-				</td>
-
-				<td >
-					<div class = "gantt_chart_table" >
-					<table class="tasks_table">
-							<div class='gantt-wrap'>
-								<svg id="gantt"></svg>
-							</div>
-					</table>
-					</div>
-				</td>
-			</tr>
-		</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
-
 	<div class="heading">
 		<br>
 		<h1>Dynamic Task Table</h1>
