@@ -1,22 +1,31 @@
 window.onload = function(){
 	
-	let gantt = new Gantt("#gantt", task_data);
-	let gantt_2 = new Gantt("#gantt_2", task_data);
+	const gantt = new Gantt("#gantt", task_data);
+	const gantt_2 = new Gantt("#gantt_2", task_data);
+	let test_log = gantt.t;
+	console.log(test_log);
 	
 	//console.log (task_data[0]);
 	function move_scroll_x(){
 		/*Get x positon of today-highlight in rect */
 		let tmp_rect = document.querySelector("#gantt > g.grid > rect.today-highlight");
-		let x_value = tmp_rect["x"]["animVal"]["value"];
+		let x_value_today = tmp_rect["x"]["animVal"]["value"];
 		let element = document.querySelector(".gantt_chart_table");
-		element.scrollLeft = x_value
-		//let domRect = element.scrollLeft;
+		let row_x = 38;
+		let mergin = row_x * 1;
+		//element.scrollLeft = x_value_today - mergin;
+		
+		let tmp_test = gantt.bars[0].x
+		element.scrollLeft = tmp_test - mergin;
 
 		let element_2 = document.querySelector(".gantt_chart_table_2");
-		element_2.scrollLeft = x_value
+		//element_2.scrollLeft = x_value_today - mergin;
+		element_2.scrollLeft = tmp_test - mergin;
 
-		//console.log(element);
-		//console.log(tmp_rect);
+		
+
+		console.log("tmp_test:",tmp_test);
+		console.log(gantt);
 	}
 	
 
@@ -73,5 +82,6 @@ window.onload = function(){
 	createTable(task_data);
 	/* Run move_scroll_x function.*/
 	let scroll_pos = move_scroll_x()
+
 }
 
