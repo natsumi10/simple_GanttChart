@@ -27,6 +27,15 @@ Frappe Gantt を使用しております。
       get_task_database() ： read_csv_file関数を呼び出し、受け取ったインスタンスデータをリストへ纏めます。
 
 
+- manage_html フォルダ ： Flaskではなく、htmlファイルとして出力したい場合はこちらのフォルダ内のcreate_html.pyを使用します。
+
+
+- templates フォルダ ： Flask起動時に利用。テンプレートhtmlが入っています。
+
+
+- static フォルダ ： Flask起動時に利用。CSS及びJavaScript、Jsonファイルが入っています。
+
+
 
 ### 今後予定している追加実装。
 
