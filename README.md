@@ -13,18 +13,18 @@ Frappe Gantt を使用しております。
 
 - flask_main.py ： メイン関数はここにあります。
 
-Main関数 ： Flaskを実行し、Webアプリを作成します。
+      __main__ ： Flaskを実行し、Webアプリを作成します。
 
-settings関数 ： ガントチャートやタスク表制作に必要なデータを取り出し、listに纏めそのlistを返します。
+      settings() ： ガントチャートやタスク表制作に必要なデータを取り出し、listに纏めそのlistを返します。
 
-index関数 ： settings関数から受け取ったリストデータと共にFlaskを利用してWebページを生成します。
+      index() ： settings関数から受け取ったリストデータと共にFlaskを利用してWebページを生成します。
 
 
 - simple_GanttChart.py ： flask_main.pyファイル内のsettings関数から呼び出されます。
 
-read_csv_file関数 ： CSVファイルを読み取り、SimpleGanttクラスのインスタンスとして纏め、そのインスタンスを返します。
+      read_csv_file() ： CSVファイルを読み取り、SimpleGanttクラスのインスタンスとして纏め、そのインスタンスを返します。
 
-get_task_database関数 ： read_csv_file関数を呼び出し、受け取ったインスタンスデータをリストへ纏めます。
+      get_task_database() ： read_csv_file関数を呼び出し、受け取ったインスタンスデータをリストへ纏めます。
 
 
 
