@@ -23,7 +23,7 @@ def settings():
     '''
     # gett csv data from simple_GanttChart.py
     # csv_db is "SimpleGantt class" instance.
-    csv_db = read_csv_file()
+    #csv_db = read_csv_file()
     task_db = get_task_database()
     
     # The variable, task_db is the list contains ordered dictionary.
