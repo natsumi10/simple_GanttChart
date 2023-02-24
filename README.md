@@ -27,7 +27,11 @@ Frappe Gantt を使用しております。
       get_task_database() ： read_csv_file関数を呼び出し、受け取ったインスタンスデータをリストへ纏めます。
 
 
-- manage_html フォルダ ： Flaskではなく、htmlファイルとして出力したい場合はこちらのフォルダ内のcreate_html.pyを使用します。
+- manage_html フォルダ ： Flaskを利用したWebアプリのみ使用する場合は、こちらのフォルダは使用しません。
+
+      Flaskではなく、htmlファイルとして出力したい場合はこちらのフォルダ内のcreate_html.pyを使用します。
+      作成されたHTMLファイルは manage_html/site/index.html として保存されます。
+      flask_main.py 上の task_db = write_html(csv_db) 命令をコメントアウトから外す事で使用できます。
 
 
 - templates フォルダ ： Flask起動時に利用。テンプレートhtmlが入っています。
@@ -35,6 +39,10 @@ Frappe Gantt を使用しております。
 
 - static フォルダ ： Flask起動時に利用。CSS及びJavaScript、Jsonファイルが入っています。
 
+      ref_ganttchart.js ： Frappe Gantt js ファイル。ガントチャートはこのファイル上でsvg画像として作成され、提供されています。
+      オリジナルのガントチャートを作成したい場合はこちらのファイルを参考して下さい。また、Snap.svg を利用する方法もあります。
+      
+      style.css ： ガントチャート含めたスタイルの指定をこのファイルで行っています。
 
 
 ### 今後予定している追加実装。
