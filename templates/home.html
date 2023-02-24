@@ -8,24 +8,24 @@
 	<script src="{{ url_for('static', filename='ref_ganttchart.js') }}"></script>
 	<script src="{{ url_for('static', filename='tasks_data.json.js') }}"></script>
 	<script src="{{ url_for('static', filename='index.js') }}"></script>
-	<link src="{{ url_for('static', filename='bootstrap.min.css')  }}" rel='stylesheet'></head>
+	<!--<link src="{{ url_for('static', filename='bootstrap.min.css')  }}" rel='stylesheet'>-->
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
-	<div class="container">
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>-->
+	<div >
 		<div class="heading">
 			<h1>{{ title }}</h1>
 			<p>アーティスト用の非常に高速なタスクリストです。</p>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div >
 		<div class="simple_gannt_chart">
-			<table class="chart_table">
+			<table class="chart_table" border="0" height="280" width="800">
 				<tr>
-					<td >
-						<div class = "task_list">
-							<table class="tasks_table">
+					<td height="280" width="800">
+						<div class = "task_list" style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
+							<table class="tasks_table" border="0" height="280" width="800" overflow:auto;>
 								<thead>
 									{% set task_header=namespace(item=1) %}
 									<tr >
@@ -56,8 +56,8 @@
 						</div>
 					</td>
 
-					<td >
-						<div class = "gantt_chart_table" >
+					<td height="280" width="800">
+						<div class = "gantt_chart_table" style="height:280px; width:400px; overflow-x:scroll;box-shadow: 0px 0px 4px #888">
 						<table class="tasks_table">
 								<div class='gantt-wrap'>
 									<svg id="gantt"></svg>
@@ -77,7 +77,7 @@
 	<table class="chart_table" border="0" height="280" width="800" overflow:auto;>
 		<tr>
 			<td>
-				<div class="task_list" >
+				<div class="task_list" style="height:280px; width:400px; overflow:auto; box-shadow: 0px 0px 4px #888">
 					<div class = dynamic_table>
 						<table class="d_table">
 						</table>
@@ -85,7 +85,7 @@
 				</div>
 			</td>
 			<td height="280" width="800">
-					<div class = "gantt_chart_table_2">
+					<div class = "gantt_chart_table_2" style="height:280px; width:400px; overflow:auto; box-shadow: 0px 0px 4px #888">
 					<table class="tasks_table">
 							<div class='gantt-wrap'>
 								<svg id="gantt_2"></svg>
